@@ -1,12 +1,10 @@
 
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse
-
-def mi_view(request):
-    return HttpResponse("<h1>Bienvenidos a la Aplicacion de Reserva de Salas!</h1>")
-
+from .views import home_view , list_view , search_view
 
 urlpatterns = [
-    path("", mi_view),
+    path("", home_view),
+    path("list/", list_view),
+    path("buscar/<nombre_de_usuario>", search_view),
 ]
